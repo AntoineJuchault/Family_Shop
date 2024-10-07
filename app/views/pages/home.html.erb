@@ -1,0 +1,10 @@
+<h1>Featured Categories</h1>
+
+<% @categories.each do |category| %>
+  <div>
+    <h3><%= category.title %></h3>
+    <p><%= category.description %></p>
+    <%= image_tag category.image if category.image.attached? %>
+    <%= link_to "View Category", category_path(category) %>
+  </div>
+<% end %>
