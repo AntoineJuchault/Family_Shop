@@ -14,11 +14,14 @@
  *= require_self
  */
 
-
-
-
-
 body {
+	margin: 0;
+	padding: 0;
+}
+
+
+
+.pages {
 	margin: 0;
 	padding: 0;
 	width: 100%;
@@ -46,8 +49,8 @@ body {
 
 /* Logo */
 #logo {
-  	width: 150px;
-  	height: 50px;
+  	width: 10em;
+  	height: 5vh;
   	background-color: #fff;
 }
 
