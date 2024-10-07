@@ -18,3 +18,159 @@
 
 
 
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100vh;
+		
+}
+
+
+/* Style général pour le navbar */
+#navbar {
+  	background-color: #3C2F2F;
+  	padding: 11px;
+  	font-family: Arial, sans-serif;
+  	display: flex;
+  	justify-content: space-between;
+  	align-items: center;
+}
+
+#navbar nav {
+  	display: flex;
+  	justify-content: space-between;
+  	align-items: center;
+  	width: 100%;
+}
+
+/* Logo */
+#logo {
+  	width: 150px;
+  	height: 50px;
+  	background-color: #fff;
+}
+
+/* Liens de navigation */
+#navlinks {
+	display: flex;
+ 	margin-left: auto; /* Pousse les liens de navigation à droite */
+}
+
+#navlinks ul {
+  	list-style-type: none;
+  	margin: 0;
+  	padding: 0;
+  	display: flex;
+}
+
+#navlinks ul li {
+ 	 margin-left: 20px;
+}
+
+#navlinks ul li a {
+  	text-decoration: none;
+  	color: white;
+  	padding: 6px 10px;
+  	transition: background-color 1.3s ease;
+}
+
+#navlinks ul li a:hover {
+  	background-color: #575758;
+  	border-radius: 6px;
+}
+
+/* Dropdown menu */
+#dropdown_menu {
+  	position: relative;
+  	margin-left: 20px;
+}
+
+#dropdown_menu_image {
+  	width: 40px;
+  	height: 40px;
+	background-color: #fff;
+  	border-radius: 50%;
+  	cursor: pointer;
+}
+
+#dropdown_toggle {
+  	position: absolute;
+  	opacity: 0;
+  	width: 1px;
+  	height: 1px;
+}
+
+/* Cacher le menu par défaut */
+#dropdown_menu ul {
+  	background-color: #282829;
+  	display: none;
+  	position: absolute;
+  	right: 0;
+  	list-style-type: none;
+  	padding: 10px;
+  	margin: 0;
+  	margin-bottom: 2em;
+  	border-radius: 6px;
+  	box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.1);
+  	transform: translateY(1.5em);
+}
+
+#dropdown_menu ul li {
+  	padding: 6px 0;
+}
+
+#dropdown_menu ul li a,
+#dropdown_menu ul li button {
+  	color: white;
+  	text-decoration: none;
+ 	background: none;
+  	border: none;
+  	cursor: pointer;
+  	padding: 11px 20px;
+  	display: block;
+  	text-align: left;
+}
+
+#dropdown_menu ul li a:hover,
+#dropdown_menu ul li button:hover {
+  	background-color: #575758;
+  	border-radius: 6px;
+}
+
+/* Montrer le menu au clic */
+#dropdown_toggle:checked + label + ul {
+  	display: block;
+}
+
+/* Register links (liens affichés lorsque l'utilisateur n'est pas connecté) */
+#register {
+  	display: flex;
+	margin-right: 10px; 
+}
+
+#register ul {
+  	list-style-type: none;
+  	margin: 0;
+ 	padding: 0;
+  	display: flex;
+}
+
+#register ul li {
+ 	 margin-left: 20px;
+}
+
+#register ul li a {
+  	text-decoration: none;
+  	color: white;
+  	padding: 6px 10px;
+  	transition: background-color 1.3s ease;
+}
+
+#register ul li a:hover {
+  	background-color: #575758;
+  	border-radius: 6px;
+}
+
+
+
