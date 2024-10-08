@@ -1,12 +1,29 @@
-<div class="pages">
-<h1>All Categories</h1>
-<%= link_to "New Category", new_category_path %>
-<ul>
-  <% @categories.each do |category| %>
-    <li>
-      <%= link_to category.title, category_path(category) %>
-    </li>
-  <% end %>
-</ul>
 
+<div class="pages">
+  <h1>Products</h1>
+  <ul>
+    <% @products.each do |product| %>
+      <li>
+        <h2><%= link_to product.title, product_path(product) %></h2>
+        <p><strong>Description:</strong> <%= product.description %></p>
+        <p><strong>Price:</strong> <%= number_to_currency(product.price) %></p>
+        <p><strong>Category:</strong> <%= product.category.title if product.category %></p>
+
+        <!-- Affichage de l'image du produit -->
+        <% if product.image.attached? %>
+          <%= image_tag product.image, size: "200x200" %>
+        <% else %>
+          <p><em>No image available</em></p>
+        <% end %>
+
+        <!-- Bouton Ajouter au panier -->
+        <% if user_signed_in? %>
+          <%= button_to "Ajouter au panier", order_order_items_path(current_order, product_id: product.id), method: :post, class: "add-to-cart" %>
+        <% else %>
+          <%= link_to "Connexion requise pour ajouter au panier", new_user_session_path, class: "login-to-cart" %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
 </div>
+

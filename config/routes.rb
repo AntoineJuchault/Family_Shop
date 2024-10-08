@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :orders do 
-    resources :orders_items, only: [:create, :update, :destroy]
+  resources :orders do
+    resources :order_items, only: [:create, :update, :destroy]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
