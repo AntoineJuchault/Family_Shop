@@ -1,51 +1,51 @@
 <div id="navbar">
   <nav>
-      <div id="logo">
-        <!-- Logo ici -->
-      </div>
-      <div id="navlinks">
-        <ul>
+    <div id="logo">
+      <!-- Logo ici -->
+    </div>
+    <div id="navlinks">
+      <ul>
+        <li>
+          <%= link_to "Accueil", root_path %>
+        </li>
+        <% if user_signed_in? %>
+          <!-- Ajout du lien vers le panier uniquement si l'utilisateur est connecté -->
           <li>
-            <%= link_to "Accueil", root_path %>
+            <%= link_to "Panier", order_path(current_order) if current_order %>
+            (<span id="cart-counter"><%= current_order ? current_order.order_items.sum(:quantity) : 0 %></span>)
           </li>
-          <li>
-          </li>
-          <li>
-            
-          </li>
-        </ul>
-      </div> 
-      <% if user_signed_in? %>
-      <!-- Affichage du dropdown menu si connecté -->
-      <div id="dropdown_menu">
-        <!-- Case à cocher cachée pour gérer le clic -->
-        <input type="checkbox" id="dropdown_toggle">
-        <label for="dropdown_toggle">
-          <div id="dropdown_menu_image">
-            <!-- Image pour le menu déroulant -->
-          </div>
-        </label>
-        <ul>
-          <li>
-            <%= link_to "Profile", edit_user_registration_path %> 
-          </li>
-          <li>
-            <%= button_to "Déconnexion", destroy_user_session_path, method: :delete %> 
-          </li>
-        </ul>
-      </div>
-      <% else %>
-      <!-- Affichage des liens de connexion si non connecté -->
-      <div id="register">
-        <ul>
-          <li>
-            <%= link_to "Connexion", new_user_session_path %> 
-          </li>
-          <li>
-            <%= link_to "Inscription", new_user_registration_path %> 
-          </li>
-        </ul>
-      </div>
-      <% end %>
+        <% end %>
+      </ul>
+    </div>
+    <% if user_signed_in? %>
+    <div id="dropdown_menu">
+      <input type="checkbox" id="dropdown_toggle">
+      <label for="dropdown_toggle">
+        <div id="dropdown_menu_image">
+          <!-- Image pour le menu déroulant -->
+        </div>
+      </label>
+      <ul>
+        <li>
+          <%= link_to "Profile", edit_user_registration_path %> 
+        </li>
+        <li>
+          <%= button_to "Déconnexion", destroy_user_session_path, method: :delete %> 
+        </li>
+      </ul>
+    </div>
+    <% else %>
+    <div id="register">
+      <ul>
+        <li>
+          <%= link_to "Connexion", new_user_session_path %> 
+        </li>
+        <li>
+          <%= link_to "Inscription", new_user_registration_path %> 
+        </li>
+      </ul>
+    </div>
+    <% end %>
   </nav>
 </div>
+

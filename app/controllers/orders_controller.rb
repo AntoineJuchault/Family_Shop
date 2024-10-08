@@ -1,53 +1,51 @@
 class OrdersController < ApplicationController
-  
-  before_action :authenticate_user!
-  before_action :set_orders, only: [:show, :edit, :update, :destroy]
+  before_action :set_order, only: [:show, :edit, :update, :destroy]
 
   def index
     @orders = current_user.orders
   end
-  
+
   def show
   end
 
   def new
-    @order = current_user.(user: current_user)
+    @order = Order.new(user: current_user)
   end
 
-  def create 
+  def create
     @order = Order.new(order_params)
-    @order.user = current_user 
-
-    if @order.save 
-      redirect_to @order, notice: "Order created"
+    @order.user = current_user
+    if @order.save
+      redirect_to @order, notice: "Order was successfully created."
     else
       render :new
     end
+  end
 
-  def edit 
+  def edit
   end
 
   def update
     if @order.update(order_params)
-      redirect_to @order, notice: "Order Updated"
+      redirect_to @order, notice: "Order was successfully updated."
     else
       render :edit
     end
   end
-  
-  def destroy 
+
+  def destroy
     @order.destroy
-    redirect_to orders_path, notice: "Order deleted"
+    redirect_to orders_path, notice: "Order was successfully deleted."
   end
 
-  private 
+  private
 
   def set_order
-    order = current_user.orders.find(params[:id])
+    @order = current_user.orders.find(params[:id])
   end
 
   def order_params
     params.require(:order).permit(:status)
   end
-
 end
+
