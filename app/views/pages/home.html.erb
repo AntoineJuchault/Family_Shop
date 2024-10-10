@@ -1,15 +1,25 @@
-<div class="pages">
-  <div id="category-container">  
-  <h1>Categories</h1>
-
-
-<% @categories.each do |category| %>
-  <div class="cards">
-    <h3><%= category.title %></h3>
-    <p><%= category.description %></p>
-    <%= image_tag category.image if category.image.attached? %>
-    <%= link_to "View Category", category_path(category) %>
+<div id="page">
+  <div id="pres-container">
+    <div id="pres-text-container">
+      <p>
+        Bienvenue à la miellerie. <br>
+        Nous proposons une large gamme de miels français, du crémeux au liquide ou doux et fort il y en a pour tout les goût. Les mie sont produits par nos soins.<br> 
+      </p>
+    </div>
   </div>
-<% end %>
-
+  <div id="category-container">
+    <h1>Categories</h1>
+    <div id="category-card-container">
+      <% @categories.each do |category| %>
+        <div class="cards">
+          <h3><%= category.title %></h3>
+          <div id="image-card-container">
+            <%= image_tag category.image if category.image.attached? %> 
+          </div>
+          <p><%= category.description %></p>
+          <li id="productsl-links-"><%= link_to "View Category", category_path(category) %></li>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>

@@ -1,6 +1,7 @@
 <div class="pages">
 <h1>New Product</h1>
-<%= form_with model: @product, local: true do |form| %>
+
+<%= form_with(model: @product, local: true) do |form| %>
   <div>
     <%= form.label :title %>
     <%= form.text_field :title %>
@@ -10,6 +11,12 @@
     <%= form.label :description %>
     <%= form.text_area :description %>
   </div>
+  
+  <div>
+    <%= form.label :weight %>
+    <%= form.number_field :weight, step: 0.01 %>
+  </div>
+
 
   <div>
     <%= form.label :price %>
@@ -30,5 +37,7 @@
     <%= form.submit "Create Product" %>
   </div>
 <% end %>
+
+<%= link_to "Back to Products", products_path %>
 
 </div>

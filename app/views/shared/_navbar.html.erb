@@ -12,7 +12,12 @@
           <!-- Ajout du lien vers le panier uniquement si l'utilisateur est connecté -->
           <li>
             <%= link_to "Panier", order_path(current_order) if current_order %>
-            (<span id="cart-counter"><%= current_order ? current_order.order_items.sum(:quantity) : 0 %></span>)
+            <span id="cart-counter">
+              <%= current_order ? current_order.order_items.sum(:quantity) : 0 %>
+            </span>
+            <span id="cart-total">
+              <%= number_to_currency(current_order_total_price) %>
+            </span>
           </li>
         <% end %>
       </ul>
@@ -49,3 +54,9 @@
   </nav>
 </div>
 
+
+<style>
+span {
+  color: #FFF; 
+}
+</style>
