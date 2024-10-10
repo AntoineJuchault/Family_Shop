@@ -3,12 +3,13 @@
     <div id="pres-text-container">
       <p>
         Bienvenue à la miellerie. <br>
-        Nous proposons une large gamme de miels français, du crémeux au liquide ou doux et fort il y en a pour tout les goût. Les mie sont produits par nos soins.<br> 
+        Nous proposons une large gamme de miels français, <br> du crémeux au liquide, doux et fort il y en a pour tout les goûts.<br> Les miels sont produits par nos soins.<br> 
       </p>
     </div>
   </div>
-  <div id="category-container">
-    <h1>Categories</h1>
+
+  <div id="category-container"> 
+    <h1>Catégories</h1> <!-- Déplacement du h1 pour qu'il soit bien au-dessus des cartes -->
     <div id="category-card-container">
       <% @categories.each do |category| %>
         <div class="cards">
@@ -17,9 +18,12 @@
             <%= image_tag category.image if category.image.attached? %> 
           </div>
           <p><%= category.description %></p>
-          <li id="productsl-links-"><%= link_to "View Category", category_path(category) %></li>
+          <li id="productsl-links-">
+            <%= link_to "Voir les produits", category_products_path(category), class: "category-button" %>
+          </li>
         </div>
       <% end %>
     </div>
   </div>
 </div>
+

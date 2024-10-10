@@ -3,7 +3,8 @@ class ProductsController < ApplicationController
   before_action :check_for_categories, only: [:new, :create]
 
   def index
-    @products = Product.all
+    @category = Category.find(params[:category_id])
+    @products = @category.products
     @categories = Category.all
   end
 

@@ -15,7 +15,8 @@
  */
 
 :root {
-	--background-color-card: #ffaa00;
+	--color-text: #f1f1f1;	
+	
 }
 
 body {
@@ -29,9 +30,10 @@ body {
 	margin: 0;
 	padding: 0;
 	width: 100%;
-	height: 100vh;
-		
+	height: 100vh;	
 }
+
+
 
 
 /* Style général pour le navbar */
@@ -181,49 +183,65 @@ body {
 
 
 /* home page */
-
-
-
+#page {
+	margin: 1em;	
+	background-image: url("home-pres.webp");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url("homepage.webp");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	padding: 1em;
+}
+#pres-container {
+	width: auto; 
+	height: 30vh; 
+	background-image: url("home-pres.webp");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	color: var(--color-text);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	margin:  1em;
+	
+}
 
 #category-container h1 {
 	text-align: center;
+	color:var(--color-text);
 }
 
-
-#pres-container {
-    	background-image: url("home-pres.webp");
-    	background-size: cover;
+#category-container {
+	margin: 5vh 1em;
+	background-image: url("homepage_darker.webp");	
+	background-size: cover;
     	background-position: center;
     	background-repeat: no-repeat;
-    	height: 40vh;
-   	color: white;
-    	position: relative;
 }
-
-#pres-text-container {
-    	position: absolute;
-    	top: 50%;
-    	left: 50%;
-    	transform: translate(-50%, -50%);
-}
-
 
 #category-card-container {
     	display: flex;
     	flex-wrap: wrap;
     	justify-content: center;
     	gap: 20px;
-
+	padding: 2em; 
 }
 
 
 .cards {
+	background-image: url("categorycard_even_lighter.webp");	
+	background-size: cover;
+    	background-position: center;
+    	background-repeat: no-repeat;
     	display: flex;
     	flex-direction: column;
     	justify-content: space-between;
     	align-items: center;
-    	background: #f8f8f8;
-    	border: 1px solid #ddd;
     	border-radius: 10px;
     	width: 20em;
     	height: auto;
@@ -241,7 +259,3 @@ body {
     	width: 100%;
     	height: 100%;
 }
-
-
-
-
