@@ -34,11 +34,17 @@ body {
 }
 
 
-
+body {
+	background-image: url("body.webp");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	
+}
 
 /* Style général pour le navbar */
 #navbar {
-  	background-color: #3C2F2F;
+  	background-color: transparent;
   	padding: 11px;
   	font-family: Arial, sans-serif;
   	display: flex;
@@ -57,7 +63,6 @@ body {
 #logo {
   	width: 10em;
   	height: 5vh;
-  	background-color: #fff;
 }
 
 /* Liens de navigation */
@@ -112,7 +117,7 @@ body {
 
 /* Cacher le menu par défaut */
 #dropdown_menu ul {
-  	background-color: #282829;
+  	background-color: transparent;
   	display: none;
   	position: absolute;
   	right: 0;
@@ -184,17 +189,15 @@ body {
 
 /* home page */
 #page {
-	margin: 1em;	
-	background-image: url("home-pres.webp");
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
+	margin: 1em;
 	background-image: url("homepage.webp");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	padding: 1em;
 }
+
+
 #pres-container {
 	width: auto; 
 	height: 30vh; 
@@ -249,6 +252,11 @@ body {
     	text-align: center;
 }
 
+
+h3 {
+	color: var(--color-text);
+}
+
 #image-card-container {
     	width: 20vh;
     	height: auto;
@@ -259,3 +267,95 @@ body {
     	width: 100%;
     	height: 100%;
 }
+
+#card-description p {
+	color: var(--color-text);
+}
+
+#navigation-links {
+	margin: 1em; 
+}
+
+#navigation-links a {
+	color: var(--color-text); 
+}
+
+
+
+
+
+/* login / Sign up page */
+
+.pages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px auto;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.pages h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: var(--color-text);
+}
+
+.form {
+    width: 100%;
+}
+
+.field {
+    margin-bottom: 15px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--color-text);
+}
+
+.field input[type="email"],
+.field input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.field input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.actions {
+    margin-top: 20px;
+}
+
+.actions input[type="submit"] {
+    width: 50%;
+    padding: 10px;
+    color: var(--color-text);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.actions input[type="submit"]:hover {
+    background-color: #434190;
+}
+
+.devise-links {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.devise-links a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.devise-links a:hover {
+    text-decoration: underline;
+}
+

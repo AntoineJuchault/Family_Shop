@@ -9,7 +9,7 @@
   </div>
 
   <div id="category-container"> 
-    <h1>Catégories</h1> <!-- Déplacement du h1 pour qu'il soit bien au-dessus des cartes -->
+    <h1>Catégories</h1>
     <div id="category-card-container">
       <% @categories.each do |category| %>
         <div class="cards">
@@ -17,10 +17,13 @@
           <div id="image-card-container">
             <%= image_tag category.image if category.image.attached? %> 
           </div>
-          <p><%= category.description %></p>
-          <li id="productsl-links-">
+          <div id="card-description">
+            <p><%= category.description %></p>
+          </div>
+          <div id="navigation-links">
+            
             <%= link_to "Voir les produits", category_products_path(category), class: "category-button" %>
-          </li>
+          </div>
         </div>
       <% end %>
     </div>
