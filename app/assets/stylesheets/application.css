@@ -1,5 +1,5 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
+ *This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
  * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
@@ -16,8 +16,8 @@
 
 :root {
 	--background-color-button:  #228B22;
-	--color-text: #f1f1f1;	
-	
+	--color-text: #f1f1f1;
+
 }
 
 body {
@@ -34,23 +34,21 @@ body {
 	height: 100vh;
     	display: flex;
     	flex-direction: column;
-    	align-items: center;	
+    	align-items: center;
 }
 
 
 body {
-	background-image: url("body.webp");
+	background-image: url("lavander.jpg");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	
+
 }
 
 /* Style général pour le navbar */
 #navbar {
-  	background-color: transparent;
   	padding: 11px;
-  	font-family: Arial, sans-serif;
   	display: flex;
   	justify-content: space-between;
   	align-items: center;
@@ -63,12 +61,12 @@ body {
   	width: 100%;
 }
 
-/* Logo */
-#logo {
-  	width: 10em;
-  	height: 5vh;
-}
 
+#navbar #logo img {
+  	width: 10vh;
+  	height: auto;
+	border-radius: 10em;
+}
 /* Liens de navigation */
 #navlinks {
 	display: flex;
@@ -97,7 +95,10 @@ body {
   	background-color: #575758;
   	border-radius: 6px;
 }
+em {
+	color: var(--color-text);
 
+}
 /* Dropdown menu */
 #dropdown_menu {
   	position: relative;
@@ -164,7 +165,7 @@ body {
 /* Register links (liens affichés lorsque l'utilisateur n'est pas connecté) */
 #register {
   	display: flex;
-	margin-right: 10px; 
+	margin-right: 10px;
 }
 
 #register ul {
@@ -193,18 +194,22 @@ body {
 
 /* home page */
 #page {
-	margin: 1em;
+	margin: 1em auto;
 	background-image: url("homepage.webp");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	padding: 1em;
+	margin-bottom: 5vh;
+	width: 100vh;
+	display: flex;
+	flex-direction: column;
+	transform: translateY(1vh);
 }
 
-
 #pres-container {
-	width: auto; 
-	height: 30vh; 
+	width: auto;
+	height: 30vh;
 	background-image: url("home-pres.webp");
 	background-size: cover;
 	background-position: center;
@@ -212,9 +217,10 @@ body {
 	color: var(--color-text);
 	display: flex;
 	align-items: center;
-	justify-content: center;	
+	justify-content: center;
 	margin:  1em;
-	
+	padding: 10px;
+
 }
 
 #category-container h1 {
@@ -224,7 +230,7 @@ body {
 
 #category-container {
 	margin: 5vh 1em;
-	background-image: url("homepage_darker.webp");	
+	background-image: url("homepage_darker.webp");
 	background-size: cover;
     	background-position: center;
     	background-repeat: no-repeat;
@@ -235,12 +241,12 @@ body {
     	flex-wrap: wrap;
     	justify-content: center;
     	gap: 20px;
-	padding: 2em; 
+	padding: 2em;
 }
 
 
 .cards {
-	background-image: url("categorycard_even_lighter.webp");	
+	background-image: url("categorycard_even_lighter.webp");
 	background-size: cover;
     	background-position: center;
     	background-repeat: no-repeat;
@@ -263,7 +269,7 @@ h3 {
 #image-card-container {
     	width: 20vh;
     	height: auto;
-	
+
 }
 
 #image-card-container img {
@@ -276,52 +282,46 @@ h3 {
 }
 
 #navigation-links {
-	margin: 1em; 
+	margin: 1em;
 }
-
 #navigation-links a {
-	color: var(--color-text); 
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: var(--background-color-button);
+	color: var(--color-text);
+	border-radius: 5px;
+	text-decoration: none;
+	font-weight: bold;
+	text-align: center;
+	transition: background-color 0.3s ease;
+}
+
+#navigation-links a:hover {
+	background-color: #1c6f1c;
 }
 
 
+/* logIn_SignUp page */
 
-
-
-/* login / Sign up page */
-
-.pages h2 {	
+.pages h2 {
     	font-size: 2em;
     	color: var(--color-text);
 }
 
-.form {
-	diplay: flex;
-	flex-direction: column;
-	align-items: center;
-	
-    	width: 80vh;
-	height: 60vh;
-}
-
-.field {
-	width: 100%;
+.form-container {
 	display: flex;
 	flex-direction: column;
-	align-items: center; 
-    	margin-bottom: 1em;
+	align-items: center;
+	width: 100vh;
 }
 
-.field label {
-    	display: block;
-    	font-weight: bold;
-    	color: var(--color-text);
-}
 
 .field input[type="email"],
 .field input[type="password"] {
-    	width: 80%;
+	width: 100vh;
     	border: none;
-    	border-radius: 1em;
+	margin: 1vh;
+	padding: 1em;
 }
 
 .field input[type="checkbox"] {
@@ -330,7 +330,7 @@ h3 {
 
 .remember {
 	color: var(--color-text);
-	display: flex; 
+	display: flex;
 	justify-content: center;
 	align-items: center;
 }
@@ -342,12 +342,11 @@ h3 {
 }
 
 .actions input[type="submit"] {
-    	width: 80%;
+    	width: 100vh;
     	padding: 1em;
-	background-color: var(--background-color-button); 
+	background-color: var(--background-color-button);
     	color: var(--color-text);
    	border: none;
-    	border-radius: 4vh;
     	cursor: pointer;
 }
 
@@ -373,7 +372,17 @@ h3 {
     	text-decoration: none;
     	font-weight: bold;
 }
-em {
+
+
+
+/* footer */
+
+
+#about {
+  	float: left;
+  	width: 33%;
 	color: var(--color-text);
-	
+	font-size: 1em;
 }
+
+#links-footer
