@@ -1,15 +1,21 @@
 <div id="page">
   <div id="pres-container">
-    <div id="pres-text-container">
-        <h1>Bienvenue à la miellerie.</h1>
+    <div id="title">
+      <h1><span>Bienvenue</span><br>à la miellerie</h1>
+    </div>
+    <div id="text-container-pres">
         <p>
-        Nous proposons une large gamme de miels français, <br> du crémeux au liquide, doux et fort il y en a pour tout les goûts.<br> Les miels sont produits par nos soins.<br> 
-      </p>
+        <span>Nous proposons une large gamme de miels français, </span><br> 
+        du crémeux au liquide, doux et fort il y en a pour tout les goûts.<br> 
+        Les miels sont produits par nos soins.<br> 
+        </p>
+      </div>
     </div>
   </div>
-
-  <div id="category-container"> 
-    <h1>Nos produits</h1>
+  <div id="category-container">
+    <div id= "title-product">
+      <h2>Nos produits</h2>
+    </div>
     <div id="category-card-container">
       <% @categories.each do |category| %>
         <div class="cards">
