@@ -17,7 +17,7 @@
 :root {
 	--background-color-body: #252525;
 	--background-color-card: #f7f7f7;
-	--background-color-button: #01796F;
+	--background-color-button: #521328;
 	--color-text: #FAFAFA;
 
 }
@@ -33,11 +33,7 @@ body {
 .pages {
 	margin: 0;
 	padding: 0;
-	width: 100%;
-	height: 100vh;
-    	display: flex;
-    	flex-direction: column;
-    	align-items: center;
+	color: var(--color-text);
 }
 
 
@@ -68,7 +64,7 @@ body {
 /* Liens de navigation */
 #navlinks {
 	display: flex;
- 	margin-left: auto; /* Pousse les liens de navigation à droite */
+ 	margin-left: auto; /* Pousse les liens de navigation à droite */	
 }
 
 #navlinks ul {
@@ -76,16 +72,18 @@ body {
   	margin: 0;
   	padding: 0;
   	display: flex;
+	font-size: 1em;
 }
 
 #navlinks ul li {
- 	 margin-left: 20px;
+ 	margin-left: 20px;
+	
 }
 
 #navlinks ul li a {
   	text-decoration: none;
   	color: white;
-  	padding: 6px 10px;
+  	padding: 6px 8px;
   	transition: background-color 1.3s ease;
 }
 
@@ -168,6 +166,7 @@ body {
   	margin: 0;
  	padding: 0;
   	display: flex;
+	font-size: 1em;
 }
 
 #register ul li {
@@ -191,8 +190,8 @@ body {
 #page {
 	width: auto;
 	margin: 1em;
-    	display: flex;
-    	flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 #pres-container {
@@ -309,79 +308,31 @@ body {
  	 background-color: #575758;
   	 color: #f7f7f7;
 }
+
+/* index product page */
+
+#title-category-products {
+	display: flex;
+	justify-content: center;
+}
+
+#title-category-products h1 {
+	color: var(--color-text);	
+}
+
+#product-container #category-product-container {
+
+	max-width: 100%;
+	display: flex;
+	background-color: yellow;
+	align-items: center;
+	margin: 1em;
+	
+}
+
+
+
 /* logIn_SignUp page */
-
-.pages h2 {
-    	font-size: 2em;
-    	color: var(--color-text);
-}
-
-.form-container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 100vh;
-}
-
-
-.field input[type="email"],
-.field input[type="password"] {
-	width: 100vh;
-    	border: none;
-	margin: 1vh;
-	padding: 1em;
-}
-
-.field input[type="checkbox"] {
-    	margin-right: 1em;
-}
-
-.remember {
-	color: var(--color-text);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.actions {
-	display: flex;
-	justify-content: center;
-    	margin-top: 20px;
-}
-
-.actions input[type="submit"] {
-    	width: 100vh;
-    	padding: 1em;
-	background-color: var(--background-color-button);
-    	color: var(--color-text);
-   	border: none;
-    	cursor: pointer;
-}
-
-
-
-.devise-shared {
-    	margin-top: 20px;
-    	text-align: center;
-}
-
-.devise-shared ul {
-    	list-style-type: none;
-    	padding: 0;
-    	margin: 0;
-}
-
-.devise-shared li {
-    	margin: 10px 0;
-}
-
-.devise-shared a {
-    	color: var(--color-text);
-    	text-decoration: none;
-    	font-weight: bold;
-}
-
-
 
 /* footer */
 
