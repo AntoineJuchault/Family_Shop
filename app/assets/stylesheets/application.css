@@ -15,7 +15,7 @@
  */
 
 :root {
-	--background-color-body: #b8a895;
+	--background-color-body: #F9F5EC;
 	--background-color-card: #e6dfcc;
 	--background-color-button: #839ba7;
 	
@@ -43,7 +43,7 @@ body {
 
 /* Style général pour le navbar */
 #navbar {
-	background-color: #6e6e6e;
+	background-color: #E69530;
   	padding: 1em;
   	display: flex;
   	justify-content: space-between;
@@ -194,58 +194,62 @@ body {
 	width: auto;
 	margin: 1em;
     display: flex;
-    flex-direction: column;
+	flex-direction: column;
+
 }
 
-#pres-container {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+#container {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+	padding: 1em;	
 }
 
-#pres-container #title {
-	display: flex;
+#container #text-home-page-container {
+	width: auto;
+	height: auto;
+	
+}
+
+#container #text-home-page-container p {
+	font-size: 1.5em;
+	margin: 2em;
+	line-height: 1.8;
+	font-family: "Georgia", serif;
+	font-style: italic;
 	font-weight: bold;
-	font-size: 2em;
 }
 
-#pres-container #title h1 {
-	color: var(--color-text);
-	line-height: 1.5;
-
+#container #image-home-container {
+    width: 100%; /* Ajustez la taille du conteneur d'image */
+    display: flex;
+	
 }
 
-#pres-container #title h1 span {
-	display: inline-block;
-	text-align: center;
-	width: 100%;
-	color: var(--color-text);
+#container #image-home-container img {
+    width: 100%;
+    height: 100%;
 }
 
 
-#pres-container #text-container-pres {
-	max-height: 100%;
+#category-container {
+	margin: auto;
+	padding: 1em;
+
+	width: auto;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	padding: 1em;
-	margin: 1em;
-	box-sizing: border-box;
-
-}
-
-#pres-container #text-container-pres p {
-	color: var(--color-text);
-	font-size: 2em;
-	line-height: 1.5;
-	text-align: justify;
-
+	
 }
 
 
-#category-container #title-product {
-	display: flex;
-	justify-content: center;
+
+
+
+#category-container #image-home-container {
+	background-color: black;
 }
 
 #category-container h2 {
@@ -269,6 +273,7 @@ body {
   	flex-direction: column;
   	align-items: center;
 	margin: 1em;
+	padding: 1em;
 }
 
 
@@ -279,30 +284,30 @@ body {
 }
 
 #category-container #category-card-container .cards #image-card-container {
-  	width: 25vh;
-  	height: auto;
+  	width: 22vh;
+  	height: 100%;
   	display: flex;
   	align-items: center;
   	justify-content: center;
 }
 
 #category-container #category-card-container .cards img {
-  	max-width: 100%;
-  	max-height: 100%;
+  	width: 100%;
+  	height: auto;
 }	
 
 #category-container #category-card-container .cards #card-description {
+	width: 100%;
   	padding: 1vh;
-  	text-align: right;
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
 }
 
-
-
-
-#category-container #category-card-container .cards #navigation-links {
-  	margin-bottom: 1vh;
-  	transform: translate(0, 0);
+#category-container #category-card-container .cards #card-description p {
+	font-size: 1em;
 }
+
 
 #category-container #category-card-container .cards #navigation-links a {
   	font-size: 2vh;
@@ -334,18 +339,14 @@ body {
 }
 
 #product-container #category-product-container {
-	max-width: 100%;
-	max-height: auto;
 	display: flex;
-	align-items: center;
-	margin: 1em;
-	padding 1em;
-	
+  	flex-wrap: wrap;
+	padding: 1em;
 }
 
 #product-container #category-product-container #card-product {
-  	width: 30vh;
-  	height: 100%;
+  	width: 25em;
+  	height: auto;
   	border-radius: 5px;
   	background-color: var(--background-color-card);
   	display: flex;
@@ -354,18 +355,21 @@ body {
 	margin: 1em;
 }
 
-#product-container #category-product-container #card-product #image-card-product img {
-  	width: 25vh;
+#product-container #category-product-container #card-product #image-card-product  {	
   	height: auto;
   	display: flex;
   	align-items: center;
-  	justify-content: center; /* Pour ajuster l'image sans déformation */
+  	justify-content: center;	
+}
+
+#product-container #category-product-container #card-product #image-card-product img {
+	width: 80%;	
 }
 
 
 #product-container #category-product-container #card-product #product-information {	
-	margin: 1em;
-	padding: 1em;
+	margin: 2vh;
+	padding: 2vh;
 }
 
 #product-container #category-product-container #card-product #product-information p {
@@ -377,52 +381,39 @@ body {
 	position: relative;
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 	width: 80%;
-	height: auto;
-	background-color: black;
+	height: auto;	
+	padding: 1em;
+	margin: 1em;
 }
 
 
 #product-container #category-product-container #card-product #product-achat #price-container p {
-	font-size: 2em;
+	font-size: 1.5em;
 	background-color: transparent;
 
 }
 
 
 
-#product-container #category-product-container #card-product #product-achat #price-container {
-	position: relative;
-	left: 0;
+#product-container #category-product-container #card-product #product-achat #button-order { 
+	padding: 0.5vh 1vh;
 }
-
-#product-container #category-product-container #card-product #product-achat #button-order {
-	position: absolute;
-	right: 0;
-}
-
-
-
-
 
 /* Style du bouton "ADD" pour ajouter un produit au panier */
 #product-container #category-product-container #card-product #product-achat #button-order #add-to-card {
-	width: auto; /* Définir la largeur du bouton */
-	height: 100%; /* Définir la hauteur du bouton */
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  	font-size: 1.5em;
+  	color: var(--color-text);
 	background-color: transparent;
-	color: var(--color-card-text); /* Couleur du texte du bouton */
-	border-radius: 4px; /* Ajouter un léger arrondi pour adoucir les bords */
-	cursor: pointer; /* Changer le curseur pour indiquer que c'est cliquable */
-	border: none; /* Supprimer la bordure par défaut */
-	font-size: 1.2em; /* Augmenter la taille de la police pour plus de visibilité */
+  	text-decoration: none;
+	border:none;
+
 }
 
 /* Style du lien "Connexion requise" pour les utilisateurs non connectés */
 #product-container #category-product-container #card-product #product-achat #button-order .login-to-card {
-	width: 100%; /* Adapter la largeur au contenu du texte */
+	width: 100%;/* Adapter la largeur au contenu du texte */
 	padding: 0.5em 1em; /* Ajouter un espacement intérieur pour rendre le lien plus cliquable */
 	background-color: #f44336; /* Couleur de fond rouge pour alerter l'utilisateur */
 	color: var(--color-card-text); /* Couleur du texte blanc */
@@ -441,12 +432,38 @@ body {
 	background-color: #d32f2f; /* Changer la couleur de fond au survol */
 }
 
+/* show product page  */
+
 
 
 /* logIn_SignUp page */
 
+#show-container {
+	display: flex;
+	justify-content: space-between;
+	align-items:center;
+	margin: 2em;	
+}
 
 
+#show-container #show-image-container {
+	width: 50em; /* Ajustez la taille du conteneur image selon vos besoins */
+	height: 50em; /* Ajustez la hauteur si nécessaire */
+	overflow: hidden; /* Assure que l'image ne dépasse pas du conteneur */
+}
+
+#show-container #show-image-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover; /* L'image remplira le conteneur sans se déformer */
+}
+
+
+#show-container #information-product-show {
+	font-size: 2em;
+	padding: 1em;
+	margin: 1em;
+}
 
 /* footer */
 

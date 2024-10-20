@@ -1,8 +1,24 @@
-<h1><%= @product.title %></h1>
-<p><%= @product.description %></p>
-<p><strong>Price:</strong> <%= number_to_currency(@product.price) %></p>
-<p><strong>Category:</strong> <%= @product.category.title %></p>
-
-<%= link_to "Edit", edit_product_path(@product) %> |
-<%= link_to "Back to Products", products_path %>
-
+<div class=pages>
+  <div id="show-container">
+    <div id="show-image-container">
+      <% if @product.image.attached? %>
+        <%= image_tag @product.image %>
+      <% end %>
+    </div>
+      <div id="information-product-show">
+          <div id="show-product-title">
+            <h1><%= @product.title %></h1>
+          </div>
+          <div id="show-information-product-container">
+            <p><%= @product.description %></p>
+            <p><strong>Price:</strong> <%= number_to_currency(@product.price) %></p>
+            <p><strong>Category:</strong> <%= @product.category.title %></p>
+          </div>
+          <% if user_signed_in?%>
+            <%= link_to "Edit", edit_product_path(@product) %> 
+          <% else %>
+            <%= link_to "Back to Products", products_path %>
+          <% end %>
+      </div>
+    </div>
+</div>
