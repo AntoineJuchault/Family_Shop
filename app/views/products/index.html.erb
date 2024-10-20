@@ -5,27 +5,33 @@
     </div>
     <div id="category-product-container">  
       <% @category.products.each do |product| %>
-        <div id="category-card-product"> 
+        <div id="card-product"> 
           <h2><%= link_to product.title, product_path(product) %></h2> 
           <!-- Affichage de l'image du produit -->
           <div id="image-card-product">
             <% if product.image.attached? %>
-              <%= image_tag product.image, size: "200x200" %>
+              <%= image_tag product.image %>
             <% else %>
               <p><em>No image available</em></p>
             <% end %>
           </div>
           <div id="product-information">            
-            <p><strong>Description:</strong> <%= product.description %></p>
-            <p><strong>Price:</strong> <%= number_to_currency(product.price) %></p>
+            <div id="product-description-container"> 
+              <p><%= product.description %></p>
+            </div>
           </div>
-          <div>
+          <div id="product-achat">
+            <div id="price-container">
+              <p><strong><%= number_to_currency(product.price) %></strong></p>
+            </div>
             <!-- Bouton Ajouter au panier -->
-            <% if user_signed_in? %>
-              <%= button_to "Ajouter au panier", order_order_items_path(current_order, product_id: product.id), method: :post, class: "add-to-cart" %>
-            <% else %>
-              <%= link_to "Connexion requise pour ajouter au panier", new_user_session_path, class: "login-to-cart" %>
-            <% end %>
+            <div id="button-order">
+              <% if user_signed_in? %>
+                <%= button_to "ADD", order_order_items_path(current_order, product_id: product.id), method: :post, id: "add-to-card" %>
+              <% else %>
+                <%= link_to "Connexion", new_user_session_path, class: "login-to-card" %>
+              <% end %>
+            </div>
           </div>
         </div> 
       <% end %>

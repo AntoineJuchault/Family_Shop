@@ -15,11 +15,13 @@
  */
 
 :root {
-	--background-color-body: #252525;
-	--background-color-card: #f7f7f7;
-	--background-color-button: #521328;
-	--color-text: #FAFAFA;
-
+	--background-color-body: #b8a895;
+	--background-color-card: #e6dfcc;
+	--background-color-button: #839ba7;
+	
+	--color-text: #3f3a33;
+	--color-card-text: #5d564f;
+	--color-button-text: #e6dfcc; 
 }
 
 body {
@@ -41,7 +43,7 @@ body {
 
 /* Style général pour le navbar */
 #navbar {
-	background-color: #464646;
+	background-color: #6e6e6e;
   	padding: 1em;
   	display: flex;
   	justify-content: space-between;
@@ -85,6 +87,7 @@ body {
   	color: white;
   	padding: 6px 8px;
   	transition: background-color 1.3s ease;
+
 }
 
 #navlinks ul li a:hover {
@@ -115,7 +118,7 @@ body {
 
 /* Cacher le menu par défaut */
 #dropdown_menu ul {
-  	background-color: transparent;
+  	background-color: #574758;;
   	display: none;
   	position: absolute;
   	right: 0;
@@ -198,19 +201,18 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: auto;
 }
 
 #pres-container #title {
 	display: flex;
-	align-items: center;
-	justify-content: center;
 	font-weight: bold;
 	font-size: 2em;
 }
 
-#pres-container h1 {
+#pres-container #title h1 {
 	color: var(--color-text);
+	line-height: 1.5;
+
 }
 
 #pres-container #title h1 span {
@@ -220,15 +222,24 @@ body {
 	color: var(--color-text);
 }
 
-#text-container-pres {
+
+#pres-container #text-container-pres {
+	max-height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	padding: 1em;
+	margin: 1em;
+	box-sizing: border-box;
+
 }
 
-#text-container-pres p {
+#pres-container #text-container-pres p {
 	color: var(--color-text);
 	font-size: 2em;
+	line-height: 1.5;
+	text-align: justify;
+
 }
 
 
@@ -238,21 +249,20 @@ body {
 }
 
 #category-container h2 {
-	color: #f1f1f1;
+	color: var(--color-text);
+	font-size: 2em;
 }
 
 
 #category-container #category-card-container {
 	display: flex;
   	flex-wrap: wrap;
-	padding: 1em;
-	
+	padding: 1em;	
 }
 
 #category-card-container .cards {
   	width: 30vh;
-  	height: 40vh;
-  	border: 1px solid #575758;
+  	height: auto;
   	border-radius: 5px;
   	background-color: var(--background-color-card);
   	display: flex;
@@ -265,12 +275,12 @@ body {
 
 #category-container #category-card-container .cards h3 {
   	font-size: 2.5vh;
-  	color: #2C2C2C;
+  	color: var(--color-text);
 }
 
 #category-container #category-card-container .cards #image-card-container {
-  	width: 100%;
-  	height: 20vh;
+  	width: 25vh;
+  	height: auto;
   	display: flex;
   	align-items: center;
   	justify-content: center;
@@ -282,11 +292,12 @@ body {
 }	
 
 #category-container #category-card-container .cards #card-description {
-  	font-size: 1.8vh;
-  	color: #383838;
   	padding: 1vh;
   	text-align: right;
 }
+
+
+
 
 #category-container #category-card-container .cards #navigation-links {
   	margin-bottom: 1vh;
@@ -295,7 +306,7 @@ body {
 
 #category-container #category-card-container .cards #navigation-links a {
   	font-size: 2vh;
-  	color: var(--color-text);
+  	color: var(--color-card-text);
   	text-decoration: none;
 	border:none;
  	background-color: var(--background-color-button);
@@ -309,30 +320,133 @@ body {
   	 color: #f7f7f7;
 }
 
+
+
 /* index product page */
 
-#title-category-products {
+#product-container #title-category-products {
 	display: flex;
 	justify-content: center;
 }
 
-#title-category-products h1 {
+#product-container #title-category-products h1 {
 	color: var(--color-text);	
 }
 
 #product-container #category-product-container {
-
 	max-width: 100%;
+	max-height: auto;
 	display: flex;
-	background-color: yellow;
 	align-items: center;
 	margin: 1em;
+	padding 1em;
 	
+}
+
+#product-container #category-product-container #card-product {
+  	width: 30vh;
+  	height: 100%;
+  	border-radius: 5px;
+  	background-color: var(--background-color-card);
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+	margin: 1em;
+}
+
+#product-container #category-product-container #card-product #image-card-product img {
+  	width: 25vh;
+  	height: auto;
+  	display: flex;
+  	align-items: center;
+  	justify-content: center; /* Pour ajuster l'image sans déformation */
+}
+
+
+#product-container #category-product-container #card-product #product-information {	
+	margin: 1em;
+	padding: 1em;
+}
+
+#product-container #category-product-container #card-product #product-information p {
+	color: var(--color-text);
+	font-size: 2em;
+}
+
+#product-container #category-product-container #card-product #product-achat {
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: 80%;
+	height: auto;
+	background-color: black;
+}
+
+
+#product-container #category-product-container #card-product #product-achat #price-container p {
+	font-size: 2em;
+	background-color: transparent;
+
+}
+
+
+
+#product-container #category-product-container #card-product #product-achat #price-container {
+	position: relative;
+	left: 0;
+}
+
+#product-container #category-product-container #card-product #product-achat #button-order {
+	position: absolute;
+	right: 0;
+}
+
+
+
+
+
+/* Style du bouton "ADD" pour ajouter un produit au panier */
+#product-container #category-product-container #card-product #product-achat #button-order #add-to-card {
+	width: auto; /* Définir la largeur du bouton */
+	height: 100%; /* Définir la hauteur du bouton */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: transparent;
+	color: var(--color-card-text); /* Couleur du texte du bouton */
+	border-radius: 4px; /* Ajouter un léger arrondi pour adoucir les bords */
+	cursor: pointer; /* Changer le curseur pour indiquer que c'est cliquable */
+	border: none; /* Supprimer la bordure par défaut */
+	font-size: 1.2em; /* Augmenter la taille de la police pour plus de visibilité */
+}
+
+/* Style du lien "Connexion requise" pour les utilisateurs non connectés */
+#product-container #category-product-container #card-product #product-achat #button-order .login-to-card {
+	width: 100%; /* Adapter la largeur au contenu du texte */
+	padding: 0.5em 1em; /* Ajouter un espacement intérieur pour rendre le lien plus cliquable */
+	background-color: #f44336; /* Couleur de fond rouge pour alerter l'utilisateur */
+	color: var(--color-card-text); /* Couleur du texte blanc */
+	border-radius: 4px; /* Arrondir légèrement les bords */
+	text-decoration: none; /* Supprimer la décoration de lien par défaut */
+	font-size: 1.2em; /* Agrandir la taille de la police */
+}
+
+/* Ajouter un effet de survol pour le bouton "ADD" */
+#product-container #category-product-container #card-product #product-achat #button-order #add-to-card:hover {
+	background-color: #575758; /* Changer la couleur de fond au survol */
+}
+
+/* Ajouter un effet de survol pour le lien "Connexion requise" */
+#product-container #category-product-container #card-product #product-achat #button-order .login-to-card:hover {
+	background-color: #d32f2f; /* Changer la couleur de fond au survol */
 }
 
 
 
 /* logIn_SignUp page */
+
+
+
 
 /* footer */
 
