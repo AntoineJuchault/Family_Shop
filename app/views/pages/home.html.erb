@@ -1,6 +1,11 @@
 <div id="page">
   <div id="container">
-    <div id="text-home-page-container">
+   <div id="aboutus-container">
+    <div id="title-home-page-container">
+      <h1> 
+          Lorem Ipsum 
+      </h1>
+    </div>
       <p>
         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, <br>
         totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. <br>
@@ -9,15 +14,18 @@
         Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, <br>
         nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"<br>
       </p>
+      <div class="button-products">
+          <a href="#">Our Product</a>
+      </div>
     </div>
-    <div id="image-home-container">
-      <%= image_tag "miel-home.jpg" %>
+    <div id="image-container">
+      <%= image_tag "miel-home.jpg", alt: "description de l'image" %>
     </div>
-  </div>
-  
+  </div> 
+
   <div id="category-container">
     <div id="title-product">
-      <h2>Nos produits</h2>
+      <h2> Lorem Ipsum </h2>
     </div>
     <div id="category-card-container">
       <% @categories.each do |category| %>
@@ -29,7 +37,7 @@
           <div id="card-description">
             <p><%= category.description %></p>
           </div>
-          <div id="navigation-links"> 
+          <div class="button-products"> 
             <%= link_to category.title, category_products_path(category) %> 
           </div>
         </div>
@@ -37,3 +45,4 @@
     </div>
   </div>
 </div>
+

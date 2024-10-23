@@ -8,7 +8,7 @@
         <div id="card-product"> 
           <h2><%= link_to product.title, product_path(product) %></h2> 
           <!-- Affichage de l'image du produit -->
-          <div id="image-card-product">
+          <div class=".cards">
             <% if product.image.attached? %>
               <%= image_tag product.image %>
             <% else %>
